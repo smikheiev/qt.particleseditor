@@ -14,6 +14,8 @@ QtObjectWithKids {
     property int windowHeight: 600
     property int settingsAreaWidth: 250
     property int controlsTreeWidth: 150
+    property int testDialogWidth: 700
+    property int testDialogHeight: 500
 
     // controls
     property bool showFrames: true
@@ -31,6 +33,8 @@ QtObjectWithKids {
         property alias windowHeight: settings.windowHeight
         property alias settingsAreaWidth: settings.settingsAreaWidth
         property alias controlsTreeWidth: settings.controlsTreeWidth
+        property alias testDialogWidth: settings.testDialogWidth
+        property alias testDialogHeight: settings.testDialogHeight
     }
 
     QtSettings.Settings {

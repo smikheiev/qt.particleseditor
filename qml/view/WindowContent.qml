@@ -61,5 +61,5 @@ Item {
     OpenFileDialog {}
     SaveFileDialog {}
     SettingsDialog {}
-    QmlExportDialog {}
+    TestDialog {}
 }

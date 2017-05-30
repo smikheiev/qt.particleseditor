@@ -24,9 +24,9 @@ MenuBar {
         }
         MenuSeparator {}
         MenuItem {
-            text: "Export to qml..."
-            shortcut: "Ctrl+E"
-            onTriggered: Actions.doSerializeToQml()
+            text: "Test..."
+            shortcut: "Ctrl+T"
+            onTriggered: Actions.doTestDialogNeeded()
         }
         MenuSeparator {}
         MenuItem {

@@ -55,9 +55,9 @@
         <file>view/controlSettings/SettingsScene.qml</file>
         <file>view/controlsTree/ControlsTree.qml</file>
         <file>view/dialogs/OpenFileDialog.qml</file>
-        <file>view/dialogs/QmlExportDialog.qml</file>
         <file>view/dialogs/SaveFileDialog.qml</file>
         <file>view/dialogs/SettingsDialog.qml</file>
+        <file>view/dialogs/TestDialog.qml</file>
         <file>view/input/inputControls/CheckBox.qml</file>
         <file>view/input/inputControls/ColorSelector.qml</file>
         <file>view/input/inputControls/ComboBox.qml</file>

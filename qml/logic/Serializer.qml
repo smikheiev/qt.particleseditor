@@ -124,9 +124,9 @@ QtObjectWithKids {
                     priv.scene.deserializeFromJson(obj.scene);
                     priv.deserializeModelFromJson(obj.tree);
                     break;
-                case Actions.serializeToQml:
+                case Actions.testDialogNeeded:
                     var qml = priv.serializeModelToQml();
-                    Actions.doOpenQmlExportDialog(qml);
+                    Actions.doOpenTestDialog(qml);
                     break;
             }
         }

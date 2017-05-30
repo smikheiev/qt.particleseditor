@@ -70,13 +70,13 @@ QtObject {
         AppDispatcher.dispatch(openSettingsDialog);
     }
 
-    readonly property string serializeToQml: "serializeToQml"
-    function doSerializeToQml() {
-        AppDispatcher.dispatch(serializeToQml);
+    readonly property string testDialogNeeded: "testDialogNeeded"
+    function doTestDialogNeeded() {
+        AppDispatcher.dispatch(testDialogNeeded);
     }
 
-    readonly property string openQmlExportDialog: "openQmlExportDialog"
-    function doOpenQmlExportDialog(qml) {
-        AppDispatcher.dispatch(openQmlExportDialog, { qml: qml });
+    readonly property string openTestDialog: "openTestDialog"
+    function doOpenTestDialog(qml) {
+        AppDispatcher.dispatch(openTestDialog, { qml: qml });
     }
 }
