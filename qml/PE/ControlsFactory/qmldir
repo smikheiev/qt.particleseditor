@@ -1,0 +1,3 @@
+module PE.ControlsFactory
+
+singleton ControlsFactory 1.0 ControlsFactory.qml

@@ -1,0 +1,3 @@
+module PE.Actions
+
+singleton Actions 1.0 Actions.qml

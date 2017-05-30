@@ -1,0 +1,3 @@
+module PE.ControlType
+
+singleton ControlType 1.0 ControlType.qml
