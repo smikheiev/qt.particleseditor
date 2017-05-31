@@ -15,6 +15,14 @@ Item {
         id: priv
 
         property bool isSelected: false
+
+        onIsSelectedChanged: {
+            if (isSelected) {
+                control.z = 1;
+            } else {
+                control.z = 0;
+            }
+        }
     }
 
     anchors {
