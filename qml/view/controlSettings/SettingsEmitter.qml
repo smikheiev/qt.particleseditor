@@ -1,3 +1,4 @@
+import QtQuick.Controls 2.2
 import QtQuick 2.9
 
 import PE.ControlType 1.0
@@ -9,6 +10,40 @@ import "base"
 
 BaseVisualControlSettings {
     id: settingsEmitter
+
+    BaseSettingsFrame {
+        InputRow {
+            id: burstCountInputRow
+            title: "Burst count"
+            inputControlType: inputControlTypeSlider
+            inputControlProperties: getSliderProperties(1, 1000)
+        }
+        Button {
+            width: parent.width
+            text: "Burst"
+            onClicked: {
+                var count = burstCountInputRow.inputControl.value;
+                control.burst(count);
+            }
+        }
+    }
+
+    BaseSettingsFrame {
+        InputRow {
+            id: pulseDurationInputRow
+            title: "Pulse duration"
+            inputControlType: inputControlTypeSlider
+            inputControlProperties: getSliderProperties(0, 10000)
+        }
+        Button {
+            width: parent.width
+            text: "Pulse"
+            onClicked: {
+                var duration = pulseDurationInputRow.inputControl.value;
+                control.pulse(duration);
+            }
+        }
+    }
 
     BaseSettingsFrame {
         InputRow {
