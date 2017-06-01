@@ -6,17 +6,19 @@ import "base"
 BaseControlSettings {
     id: settingsParticleSystem
 
-    InputRow {
-        title: "Paused"
-        inputControlType: inputControlTypeCheckBox
-        bindTarget: control
-        bindTargetProperty: "paused"
-    }
+    BaseSettingsFrame {
+        InputRow {
+            title: "Paused"
+            inputControlType: inputControlTypeCheckBox
+            bindTarget: control
+            bindTargetProperty: "paused"
+        }
 
-    InputRow {
-        title: "Running"
-        inputControlType: inputControlTypeCheckBox
-        bindTarget: control
-        bindTargetProperty: "running"
+        InputRow {
+            title: "Running"
+            inputControlType: inputControlTypeCheckBox
+            bindTarget: control
+            bindTargetProperty: "running"
+        }
     }
 }

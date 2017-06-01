@@ -11,58 +11,60 @@ BaseSettings {
 
     readonly property RegExpValidator uniqueIdValidator: RegExpValidator { regExp: /[a-z][a-zA-Z\d_]*/ }
 
-    InputRow {
-        title: "Type"
-        inputControlType: inputControlTypeTextField
-        inputControlProperties: {
-            "text": controlType,
-            "readOnly": true
-        }
-    }
-
-    InputRow {
-        id: uniqueIdSettingRow
-
-        title: "id"
-        inputControlType: inputControlTypeTextField
-        inputControlProperties: {
-            "validator": uniqueIdValidator,
-            "onEditingFinishedHandler": onEditingFinishedHandler
-        }
-
-        Connections {
-            target: control
-            onUniqueIdChanged: {
-                if (control.uniqueId !== uniqueIdSettingRow.inputControl.text) {
-                    setUniqueIdText()
-                }
+    BaseSettingsFrame {
+        InputRow {
+            title: "Type"
+            inputControlType: inputControlTypeTextField
+            inputControlProperties: {
+                "text": controlType,
+                "readOnly": true
             }
         }
 
-        Connections {
-            target: AppDispatcher
-            onDispatched: {
-                if (type === Actions.changeControlIdError) {
-                    if (control === message.control) {
-                        uniqueIdSettingRow.inputControl.animateError()
-                        uniqueIdSettingRow.setUniqueIdText()
+        InputRow {
+            id: uniqueIdSettingRow
+
+            title: "id"
+            inputControlType: inputControlTypeTextField
+            inputControlProperties: {
+                "validator": uniqueIdValidator,
+                "onEditingFinishedHandler": onEditingFinishedHandler
+            }
+
+            Connections {
+                target: control
+                onUniqueIdChanged: {
+                    if (control.uniqueId !== uniqueIdSettingRow.inputControl.text) {
+                        setUniqueIdText()
                     }
                 }
             }
-        }
 
-        function onEditingFinishedHandler() {
-            if (control.uniqueId !== inputControl.text) {
-                Actions.doChangeControlId(control, inputControl.text)
+            Connections {
+                target: AppDispatcher
+                onDispatched: {
+                    if (type === Actions.changeControlIdError) {
+                        if (control === message.control) {
+                            uniqueIdSettingRow.inputControl.animateError()
+                            uniqueIdSettingRow.setUniqueIdText()
+                        }
+                    }
+                }
             }
-        }
 
-        function setUniqueIdText() {
-            uniqueIdSettingRow.inputControl.text = control.uniqueId;
-        }
+            function onEditingFinishedHandler() {
+                if (control.uniqueId !== inputControl.text) {
+                    Actions.doChangeControlId(control, inputControl.text)
+                }
+            }
 
-        Component.onCompleted: {
-            setUniqueIdText()
+            function setUniqueIdText() {
+                uniqueIdSettingRow.inputControl.text = control.uniqueId;
+            }
+
+            Component.onCompleted: {
+                setUniqueIdText()
+            }
         }
     }
 }

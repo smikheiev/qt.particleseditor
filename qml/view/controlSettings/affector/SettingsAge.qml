@@ -6,18 +6,20 @@ import "../base"
 BaseAffectorSettings {
     id: settingsAge
 
-    InputRow {
-        title: "Advance position"
-        inputControlType: inputControlTypeCheckBox
-        bindTarget: control
-        bindTargetProperty: "advancePosition"
-    }
+    BaseSettingsFrame {
+        InputRow {
+            title: "Advance position"
+            inputControlType: inputControlTypeCheckBox
+            bindTarget: control
+            bindTargetProperty: "advancePosition"
+        }
 
-    InputRow {
-        title: "Life left"
-        inputControlType: inputControlTypeSlider
-        inputControlProperties: getSliderProperties(0, 1000)
-        bindTarget: control
-        bindTargetProperty: "lifeLeft"
+        InputRow {
+            title: "Life left"
+            inputControlType: inputControlTypeSlider
+            inputControlProperties: getSliderProperties(0, 1000)
+            bindTarget: control
+            bindTargetProperty: "lifeLeft"
+        }
     }
 }

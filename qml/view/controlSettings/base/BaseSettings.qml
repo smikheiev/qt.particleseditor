@@ -15,6 +15,6 @@ Item {
         id: settingsRowsColumn
 
         width: parent.width
-        spacing: 2
+        spacing: 0
     }
 }

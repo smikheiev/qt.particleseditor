@@ -41,6 +41,7 @@
         <file>view/controlSettings/base/BaseAffectorSettings.qml</file>
         <file>view/controlSettings/base/BaseControlSettings.qml</file>
         <file>view/controlSettings/base/BaseSettings.qml</file>
+        <file>view/controlSettings/base/BaseSettingsFrame.qml</file>
         <file>view/controlSettings/base/BaseVisualControlSettings.qml</file>
         <file>view/controlSettings/direction/SettingsAngleDirection.qml</file>
         <file>view/controlSettings/direction/SettingsPointDirection.qml</file>

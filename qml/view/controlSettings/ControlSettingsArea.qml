@@ -47,7 +47,6 @@ Item {
 
         anchors {
             fill: parent
-            margins: 1
         }
 
         contentWidth: width
