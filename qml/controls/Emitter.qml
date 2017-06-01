@@ -38,7 +38,10 @@ Emitter {
             "emitRate",
             "enabled",
             "endSize",
-//            "group", // TODO: implement
+            {
+                "prop": "group",
+                "serializeToQmlFunc": function() { return "\"" + group + "\""; }
+            },
             "lifeSpan",
             "lifeSpanVariation",
             "maximumEmitted",

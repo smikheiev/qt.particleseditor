@@ -27,7 +27,12 @@ QtObjectWithKids {
         ];
         readonly property var commonPropsAffector: [
             "enabled",
-//            "groups", // TODO: implement
+            {
+                "prop": "groups",
+                "serializeToJsonFunc": function() { return control.groupsHelper.serializeToJson(); },
+                "deserializeFromJsonFunc": function(obj) { control.groupsHelper.deserializeFromJson(obj); },
+                "serializeToQmlFunc": function() { return control.groupsHelper.serializeToQml(); },
+            },
             "once",
             {
                 "prop": "shape",
@@ -102,9 +107,13 @@ QtObjectWithKids {
 
         for (var i in allProps) {
             var propObj = allProps[i];
-            if (typeof propObj === "string") {
-                control[propObj] = obj[propObj];
-            } else {
+            var ttype = typeof propObj;
+            if (ttype === "string") {
+                var propValue = obj[propObj];
+                if (propValue !== undefined) {
+                    control[propObj] = propValue;
+                }
+            } else if (ttype === "object") {
                 var ignore = propObj.ignore;
                 if (ignore === "json") {
                     continue;
@@ -112,7 +121,7 @@ QtObjectWithKids {
 
                 var prop = propObj.prop;
                 var obj2 = obj[prop];
-                if (obj2) {
+                if (obj2 !== undefined) {
                     var func = propObj.deserializeFromJsonFunc;
                     if (func) {
                         func(obj2);

@@ -11,6 +11,7 @@
         <file>controls/direction/PointDirection.qml</file>
         <file>controls/direction/TargetDirection.qml</file>
         <file>controls/helpers/FrameHelper.qml</file>
+        <file>controls/helpers/GroupsHelper.qml</file>
         <file>controls/helpers/SerializeHelper.qml</file>
         <file>controls/helpers/SubControlHelper.qml</file>
         <file>controls/particle/ImageParticle.qml</file>

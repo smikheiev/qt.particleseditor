@@ -10,6 +10,10 @@ ImageParticle {
     property string uniqueId: ""
     property string controlType: ControlType.imageParticle
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: imageParticle
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: imageParticle
         props: [
@@ -30,6 +34,12 @@ ImageParticle {
             },
             "greenVariation",
 //            "opacityTable", // TODO: implement
+            {
+                "prop": "groups",
+                "serializeToJsonFunc": groupsHelper.serializeToJson,
+                "deserializeFromJsonFunc": groupsHelper.deserializeFromJson,
+                "serializeToQmlFunc": groupsHelper.serializeToQml,
+            },
             "redVariation",
             "rotation",
             "rotationVariation",

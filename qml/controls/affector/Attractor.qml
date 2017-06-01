@@ -16,6 +16,10 @@ Attractor {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: attractor
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: attractor
         props: [

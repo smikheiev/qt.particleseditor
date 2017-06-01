@@ -16,6 +16,10 @@ Friction {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: friction
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: friction
         props: [

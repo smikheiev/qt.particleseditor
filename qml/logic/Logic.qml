@@ -172,6 +172,12 @@ QtObjectWithKids {
 
             return controlsToDestroy;
         }
+
+        function restartAllParticleSystems() {
+            for (var i in tree._root.kids) {
+                tree._root.kids[i].data.restart();
+            }
+        }
     }
 
     Connections {
@@ -197,6 +203,9 @@ QtObjectWithKids {
                     break;
                 case Actions.removeAllControls:
                     priv.removeAllControls();
+                    break;
+                case Actions.deserializationDone:
+                    priv.restartAllParticleSystems();
                     break;
             }
         }

@@ -16,6 +16,10 @@ Wander {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: wander
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: wander
         props: [

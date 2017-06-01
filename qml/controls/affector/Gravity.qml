@@ -16,6 +16,10 @@ Gravity {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: gravity
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: gravity
         props: [

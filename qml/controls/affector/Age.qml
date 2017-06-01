@@ -16,6 +16,10 @@ Age {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: age
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: age
         props: [

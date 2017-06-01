@@ -18,6 +18,24 @@ BaseControlSettings {
 
     BaseSettingsFrame {
         InputRow {
+            title: "Groups"
+            inputControlType: inputControlTypeTextField
+            inputControlProperties: {
+                "onEditingFinishedHandler": onEditingFinishedHandler
+            }
+
+            function onEditingFinishedHandler() {
+                control.groupsHelper.setGroupsFromText(inputControl.text);
+            }
+
+            Component.onCompleted: {
+                inputControl.text = control.groupsHelper.getGroupsText();
+            }
+        }
+    }
+
+    BaseSettingsFrame {
+        InputRow {
             title: "Color"
             inputControlType: inputControlTypeColorSelector
             bindTarget: control

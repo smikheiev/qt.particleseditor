@@ -16,6 +16,10 @@ Turbulence {
         compareValueTypeFunction: function(valueType) { return ControlType.isShape(valueType); }
     }
 
+    readonly property GroupsHelper groupsHelper: GroupsHelper {
+        control: turbulence
+    }
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: turbulence
         props: [

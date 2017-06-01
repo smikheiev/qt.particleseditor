@@ -56,6 +56,15 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
+            title: "Group"
+            inputControlType: inputControlTypeTextField
+            bindTarget: control
+            bindTargetProperty: "group"
+        }
+    }
+
+    BaseSettingsFrame {
+        InputRow {
             title: "Emit rate"
             inputControlType: inputControlTypeSlider
             inputControlProperties: getSliderProperties(0, 1000)

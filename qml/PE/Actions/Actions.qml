@@ -79,4 +79,9 @@ QtObject {
     function doOpenTestDialog(qml) {
         AppDispatcher.dispatch(openTestDialog, { qml: qml });
     }
+
+    readonly property string deserializationDone: "deserializationDone"
+    function doDeserializationDone() {
+        AppDispatcher.dispatch(deserializationDone);
+    }
 }
