@@ -2,7 +2,7 @@ import QtQuick.Particles 2.0
 
 import PE.ControlType 1.0
 
-import "helpers"
+import "../helpers"
 
 Emitter {
     id: emitter
@@ -30,42 +30,11 @@ Emitter {
         control: emitter
         props: [
             {
-                "prop": "acceleration",
-                "serializeToJsonFunc": accelerationHelper.serializeToJson,
-                "deserializeFromJsonFunc": accelerationHelper.deserializeFromJson,
-                "serializeToQmlFunc": accelerationHelper.serializeToQml,
-            },
-            "emitRate",
-            "enabled",
-            "endSize",
-            {
-                "prop": "group",
-                "serializeToQmlFunc": function() { return "\"" + group + "\""; }
-            },
-            "lifeSpan",
-            "lifeSpanVariation",
-            "maximumEmitted",
-            {
                 "prop": "shape",
                 "serializeToJsonFunc": shapeHelper.serializeToJson,
                 "deserializeFromJsonFunc": shapeHelper.deserializeFromJson,
                 "serializeToQmlFunc": shapeHelper.serializeToQml,
             },
-            "size",
-            "sizeVariation",
-            "startTime",
-            {
-                "prop": "system",
-                "ignore": "json",
-                "serializeToQmlFunc": function() { return system.uniqueId; },
-            },
-            {
-                "prop": "velocity",
-                "serializeToJsonFunc": velocityHelper.serializeToJson,
-                "deserializeFromJsonFunc": velocityHelper.deserializeFromJson,
-                "serializeToQmlFunc": velocityHelper.serializeToQml,
-            },
-            "velocityFromMovement",
         ]
     }
 

@@ -10,6 +10,8 @@
         <file>controls/direction/AngleDirection.qml</file>
         <file>controls/direction/PointDirection.qml</file>
         <file>controls/direction/TargetDirection.qml</file>
+        <file>controls/emitter/Emitter.qml</file>
+        <file>controls/emitter/TrailEmitter.qml</file>
         <file>controls/helpers/FrameHelper.qml</file>
         <file>controls/helpers/GroupsHelper.qml</file>
         <file>controls/helpers/SerializeHelper.qml</file>
@@ -18,7 +20,6 @@
         <file>controls/shape/EllipseShape.qml</file>
         <file>controls/shape/LineShape.qml</file>
         <file>controls/shape/MaskShape.qml</file>
-        <file>controls/Emitter.qml</file>
         <file>controls/ParticleSystem.qml</file>
         <file>logic/Logic.qml</file>
         <file>logic/Serializer.qml</file>
@@ -41,18 +42,20 @@
         <file>view/controlSettings/affector/SettingsWander.qml</file>
         <file>view/controlSettings/base/BaseAffectorSettings.qml</file>
         <file>view/controlSettings/base/BaseControlSettings.qml</file>
+        <file>view/controlSettings/base/BaseEmitterSettings.qml</file>
         <file>view/controlSettings/base/BaseSettings.qml</file>
         <file>view/controlSettings/base/BaseSettingsFrame.qml</file>
         <file>view/controlSettings/base/BaseVisualControlSettings.qml</file>
         <file>view/controlSettings/direction/SettingsAngleDirection.qml</file>
         <file>view/controlSettings/direction/SettingsPointDirection.qml</file>
         <file>view/controlSettings/direction/SettingsTargetDirection.qml</file>
+        <file>view/controlSettings/emitter/SettingsEmitter.qml</file>
+        <file>view/controlSettings/emitter/SettingsTrailEmitter.qml</file>
         <file>view/controlSettings/particle/SettingsImageParticle.qml</file>
         <file>view/controlSettings/shape/SettingsEllipseShape.qml</file>
         <file>view/controlSettings/shape/SettingsLineShape.qml</file>
         <file>view/controlSettings/shape/SettingsMaskShape.qml</file>
         <file>view/controlSettings/ControlSettingsArea.qml</file>
-        <file>view/controlSettings/SettingsEmitter.qml</file>
         <file>view/controlSettings/SettingsParticleSystem.qml</file>
         <file>view/controlSettings/SettingsScene.qml</file>
         <file>view/controlsTree/ControlsTree.qml</file>

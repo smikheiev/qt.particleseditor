@@ -26,6 +26,8 @@ Item {
                     source += "affector/";
                 } else if (ControlType.isDirection(controlType)) {
                     source += "direction/";
+                } else if (ControlType.isEmitter(controlType)) {
+                    source += "emitter/";
                 } else if (ControlType.isParticle(controlType)) {
                     source += "particle/";
                 } else if (ControlType.isShape(controlType)) {

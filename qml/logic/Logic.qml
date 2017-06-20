@@ -210,10 +210,4 @@ QtObjectWithKids {
             }
         }
     }
-
-    Component.onCompleted: {
-        Actions.doCreateControl(ControlType.particleSystem, true);
-        Actions.doCreateControl(ControlType.emitter, true);
-        Actions.doCreateControl(ControlType.imageParticle, true);
-    }
 }

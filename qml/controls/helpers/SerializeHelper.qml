@@ -47,10 +47,43 @@ QtObjectWithKids {
             },
 //            "whenCollidingWith", // TODO: implement
         ]
+        readonly property var commonPropsEmitter: [
+            {
+                "prop": "acceleration",
+                "serializeToJsonFunc": function() { return control.accelerationHelper.serializeToJson(); },
+                "deserializeFromJsonFunc": function(obj) { return control.accelerationHelper.deserializeFromJson(obj); },
+                "serializeToQmlFunc": function() { return control.accelerationHelper.serializeToQml() },
+            },
+            "emitRate",
+            "enabled",
+            "endSize",
+            {
+                "prop": "group",
+                "serializeToQmlFunc": function() { return "\"" + control.group + "\""; }
+            },
+            "lifeSpan",
+            "lifeSpanVariation",
+            "maximumEmitted",
+            "size",
+            "sizeVariation",
+            "startTime",
+            {
+                "prop": "system",
+                "ignore": "json",
+                "serializeToQmlFunc": function() { return control.system.uniqueId; },
+            },
+            {
+                "prop": "velocity",
+                "serializeToJsonFunc": function() { return control.velocityHelper.serializeToJson(); },
+                "deserializeFromJsonFunc": function(obj) { return control.velocityHelper.deserializeFromJson(obj); },
+                "serializeToQmlFunc": function() { return control.velocityHelper.serializeToQml(); },
+            },
+            "velocityFromMovement",
+        ]
 
-        readonly property bool isVisualControl: ControlType.isAffector(control.controlType) ||
-                                       ControlType.isEmitter(control.controlType)
         readonly property bool isAffector: ControlType.isAffector(control.controlType)
+        readonly property bool isEmitter: ControlType.isEmitter(control.controlType)
+        readonly property bool isVisualControl: isAffector || isEmitter
 
         function getAllProps() {
             var allProps = commonProps;
@@ -60,6 +93,10 @@ QtObjectWithKids {
             if (isAffector) {
                 allProps = allProps.concat(commonPropsAffector);
             }
+            if (isEmitter) {
+                allProps = allProps.concat(commonPropsEmitter);
+            }
+
             allProps = allProps.concat(props);
 
             return allProps;

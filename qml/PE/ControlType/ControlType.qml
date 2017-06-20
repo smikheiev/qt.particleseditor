@@ -4,7 +4,9 @@ import QtQuick 2.9
 
 QtObject {
     readonly property string particleSystem: "ParticleSystem"
+
     readonly property string emitter: "Emitter"
+    readonly property string trailEmitter: "TrailEmitter"
 
     readonly property string imageParticle: "ImageParticle"
 
@@ -28,7 +30,8 @@ QtObject {
     }
 
     function isEmitter(controlType) {
-        return controlType === emitter;
+        return controlType === emitter ||
+                controlType === trailEmitter;
     }
 
     function isParticle(controlType) {

@@ -43,11 +43,17 @@ MenuBar {
             text: "Particle system"
             controlType: ControlType.particleSystem
         }
+        MenuSeparator {}
         MenuItemAddControl {
             text: "Emitter"
-            controlType: "Emitter"
+            controlType: ControlType.emitter
             enabled: isAnyControlSelected
         }
+        MenuItemAddControl {
+            text: "TrailEmitter"
+            controlType: ControlType.trailEmitter
+        }
+        MenuSeparator {}
         MenuItemAddControl {
             text: "Image particle"
             controlType: ControlType.imageParticle

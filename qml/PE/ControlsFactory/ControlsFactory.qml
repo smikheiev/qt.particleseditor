@@ -16,12 +16,14 @@ QtObjectWithKids {
 
     function createControl(controlType, parent) {
         var url = "qrc:/controls/";
-        if (ControlType.isParticle(controlType)) {
-            url += "particle/";
-        } else if (ControlType.isAffector(controlType)) {
+        if (ControlType.isAffector(controlType)) {
             url += "affector/";
         } else if (ControlType.isDirection(controlType)) {
             url += "direction/";
+        } else if (ControlType.isEmitter(controlType)) {
+            url += "emitter/";
+        } else if (ControlType.isParticle(controlType)) {
+            url += "particle/";
         } else if (ControlType.isShape(controlType)) {
             url += "shape/";
         }
@@ -29,7 +31,7 @@ QtObjectWithKids {
 
         var component = Qt.createComponent(url, Component.PreferSynchronous);
         if (component.status !== Component.Ready) {
-            throw new Error("Can not create component of type " + controlType);
+            throw new Error("Can not create component of type " + controlType + "; url: " + url);
         }
 
         var control = component.createObject(parent);
