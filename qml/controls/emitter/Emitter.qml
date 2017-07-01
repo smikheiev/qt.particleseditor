@@ -47,13 +47,14 @@ Emitter {
         maxValueProperty: "lifeSpanMax"
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: emitter
+        parent: emitter
+    }
+
     width: 100
     height: 100
 
     lifeSpan: lifespanVariationHelper.baseValue()
     lifeSpanVariation: lifespanVariationHelper.variationValue()
-
-    FrameHelper {
-        control: emitter
-    }
 }

@@ -52,6 +52,7 @@ MenuBar {
         MenuItemAddControl {
             text: "TrailEmitter"
             controlType: ControlType.trailEmitter
+            enabled: isAnyControlSelected
         }
         MenuSeparator {}
         MenuItemAddControl {

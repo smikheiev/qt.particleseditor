@@ -32,10 +32,11 @@ Turbulence {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: turbulence
+        parent: turbulence
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: turbulence
-    }
 }

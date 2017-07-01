@@ -33,12 +33,13 @@ Wander {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: wander
+        parent: wander
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: wander
-    }
 
     function serializeToQmlAffectedParameter() {
         switch (affectedParameter) {

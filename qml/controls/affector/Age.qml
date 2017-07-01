@@ -28,10 +28,11 @@ Age {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: age
+        parent: age
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: age
-    }
 }

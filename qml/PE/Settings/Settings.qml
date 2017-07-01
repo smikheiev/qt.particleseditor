@@ -23,6 +23,7 @@ QtObjectWithKids {
     property color emitterColor: "#0000FF"
     property color particleColor: "#00FF00"
     property color affectorColor: "#FF0000"
+    property int mouseBorderOffset: 10
 
     QtSettings.Settings {
         category: "layout"
@@ -45,5 +46,6 @@ QtObjectWithKids {
         property alias emitterColor: settings.emitterColor
         property alias particleColor: settings.particleColor
         property alias affectorColor: settings.affectorColor
+        property alias mouseBorderOffset: settings.mouseBorderOffset
     }
 }

@@ -11,19 +11,7 @@ Item {
 
     property Item control: null
 
-    QtObject {
-        id: priv
-
-        property bool isSelected: false
-
-        onIsSelectedChanged: {
-            if (isSelected) {
-                control.z = 1;
-            } else {
-                control.z = 0;
-            }
-        }
-    }
+    property bool isSelected: false
 
     anchors {
         fill: control
@@ -40,7 +28,7 @@ Item {
 
         color: "transparent"
         border.color: getBorderColor()
-        border.width: priv.isSelected ? 3 : 1
+        border.width: isSelected ? 3 : 1
     }
 
     MouseArea {
@@ -48,22 +36,18 @@ Item {
 
         anchors {
             fill: parent
+            margins: -Settings.mouseBorderOffset
         }
 
         drag.target: control
-
-        onPressed: {
-            if (!priv.isSelected) {
-                Actions.doControlSelected(control);
-            }
-        }
+        enabled: isSelected
     }
 
     Connections {
         target: AppDispatcher
         onDispatched: {
             if (type === Actions.controlSelected) {
-                priv.isSelected = (message.control === frameHelper.control);
+                frameHelper.isSelected = (message.control === frameHelper.control);
             }
         }
     }

@@ -61,6 +61,13 @@ Window {
             bindTarget: Settings
             bindTargetProperty: "affectorColor"
         }
+        InputRow {
+            title: "Mouse border offset"
+            inputControlType: inputControlTypeSlider
+            inputControlProperties: getSliderProperties(0, 20)
+            bindTarget: Settings
+            bindTargetProperty: "mouseBorderOffset"
+        }
     }
 
     Connections {

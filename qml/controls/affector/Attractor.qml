@@ -34,12 +34,13 @@ Attractor {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: attractor
+        parent: attractor
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: attractor
-    }
 
     function serializeToQmlAffectedParameter() {
         switch (affectedParameter) {

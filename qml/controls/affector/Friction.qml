@@ -28,10 +28,11 @@ Friction {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: friction
+        parent: friction
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: friction
-    }
 }

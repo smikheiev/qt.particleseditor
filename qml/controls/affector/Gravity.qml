@@ -28,10 +28,11 @@ Gravity {
         ]
     }
 
+    readonly property FrameHelper frameHelper: FrameHelper {
+        control: gravity
+        parent: gravity
+    }
+
     width: 100
     height: 100
-
-    FrameHelper {
-        control: gravity
-    }
 }

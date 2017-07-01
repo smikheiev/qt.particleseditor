@@ -37,7 +37,7 @@ QtObjectWithKids {
         }
 
         function createControl(controlType, controlProps, parentControlId, selectControl) {
-            var control = ControlsFactory.createControl(controlType, scene);
+            var control = ControlsFactory.createControl(controlType, scene.controlsContainer);
             if (!control) {
                 throw new Error("Control was not created " + controlType);
             }
