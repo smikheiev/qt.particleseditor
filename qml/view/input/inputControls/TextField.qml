@@ -7,6 +7,8 @@ TextField {
     property var onEditingFinishedHandler: function() {}
     onEditingFinished: onEditingFinishedHandler()
 
+    selectByMouse: true
+
     Rectangle {
         id: errorRect
 
