@@ -33,8 +33,7 @@ const QString FileIO::readFile(const QString& fileUrl)
     if (file.open(QIODevice::ReadOnly))
     {
         QTextStream stream(&file);
-        QString content;
-        stream >> content;
+        QString content = stream.readAll();
 
         file.close();
 

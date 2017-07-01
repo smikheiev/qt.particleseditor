@@ -36,13 +36,14 @@ BaseSettings {
     }
 
     BaseSettingsFrame {
+        visible: control.bgSource.length === 0
+
         InputRow {
             title: "Width"
             inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "bgWidth"
-            visible: control.bgSource.length === 0
         }
         InputRow {
             title: "Height"
@@ -50,14 +51,12 @@ BaseSettings {
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "bgHeight"
-            visible: control.bgSource.length === 0
         }
         InputRow {
             title: "Background color"
             inputControlType: inputControlTypeColorSelector
             bindTarget: control
             bindTargetProperty: "bgColor"
-            visible: control.bgSource.length === 0
         }
     }
 }

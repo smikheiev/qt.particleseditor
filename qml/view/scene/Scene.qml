@@ -17,6 +17,12 @@ Item {
         id: backgroundImage
 
         source: bgSource
+
+        onStatusChanged: {
+            if (status === Image.Error) {
+                scene.bgSource = ""
+            }
+        }
     }
 
     Rectangle {
