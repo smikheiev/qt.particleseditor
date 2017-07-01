@@ -31,7 +31,7 @@ BaseVisualControlSettings {
         InputRow {
             title: "Emit rate"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1000)
+            inputControlProperties: getSliderProperties(0, 300)
             bindTarget: control
             bindTargetProperty: "emitRate"
         }
@@ -58,14 +58,14 @@ BaseVisualControlSettings {
         InputRow {
             title: "Life span"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 10000)
+            inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
             bindTargetProperty: "lifeSpan"
         }
         InputRow {
             title: "Life span variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 10000)
+            inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
             bindTargetProperty: "lifeSpanVariation"
         }

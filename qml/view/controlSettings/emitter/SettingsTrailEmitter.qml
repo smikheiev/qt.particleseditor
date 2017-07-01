@@ -108,7 +108,7 @@ BaseEmitterSettings {
         InputRow {
             title: "Emit rate per particle"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(1, 1000)
+            inputControlProperties: getSliderProperties(1, 300)
             bindTarget: control
             bindTargetProperty: "emitRatePerParticle"
         }
