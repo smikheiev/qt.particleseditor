@@ -9,14 +9,14 @@ BaseAffectorSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Factor"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "factor"
         }
         InputRow {
             title: "Threshold"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "threshold"

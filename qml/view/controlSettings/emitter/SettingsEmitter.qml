@@ -14,7 +14,7 @@ BaseEmitterSettings {
         InputRow {
             id: burstCountInputRow
             title: "Burst count"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 300)
         }
         Button {

@@ -43,7 +43,7 @@ BaseControlSettings {
         }
         InputRow {
             title: "Color variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "colorVariation"
@@ -53,14 +53,14 @@ BaseControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Alpha"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "alpha"
         }
         InputRow {
             title: "Alpha variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "alphaVariation"
@@ -70,21 +70,21 @@ BaseControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Red variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "redVariation"
         }
         InputRow {
             title: "Green variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "greenVariation"
         }
         InputRow {
             title: "Blue variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "blueVariation"
@@ -94,14 +94,14 @@ BaseControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Rotation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-360, 360)
             bindTarget: control
             bindTargetProperty: "rotation"
         }
         InputRow {
             title: "Rotation variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-360, 360)
             bindTarget: control
             bindTargetProperty: "rotationVariation"
@@ -118,14 +118,14 @@ BaseControlSettings {
 
         InputRow {
             title: "Rotation velocity"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "rotationVelocity"
         }
         InputRow {
             title: "Rotation velocity variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-1000, 1000)
             bindTarget: control
             bindTargetProperty: "rotationVelocityVariation"

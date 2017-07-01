@@ -68,6 +68,7 @@
         <file>view/input/inputControls/ComboBox.qml</file>
         <file>view/input/inputControls/ImageSelector.qml</file>
         <file>view/input/inputControls/Slider.qml</file>
+        <file>view/input/inputControls/SliderWithTextFiled.qml</file>
         <file>view/input/inputControls/TextField.qml</file>
         <file>view/input/InputRow.qml</file>
         <file>view/mainMenu/MainMenu.qml</file>

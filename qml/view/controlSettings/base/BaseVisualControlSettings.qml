@@ -8,14 +8,14 @@ BaseControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Width"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "width"
         }
         InputRow {
             title: "Height"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "height"
@@ -25,7 +25,7 @@ BaseControlSettings {
             id: xSettingsRow
 
             title: "X"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-100, 1000)
             bindTarget: control
             bindTargetProperty: "x"
@@ -45,7 +45,7 @@ BaseControlSettings {
             id: ySettingsRow
 
             title: "Y"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-100, 1000)
             bindTarget: control
             bindTargetProperty: "y"

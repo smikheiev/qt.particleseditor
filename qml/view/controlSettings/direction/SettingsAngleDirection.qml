@@ -8,14 +8,14 @@ BaseSettings {
 
     InputRow {
         title: "Angle"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-360, 360)
         bindTarget: control
         bindTargetProperty: "angle"
     }
     InputRow {
         title: "Angle variation"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-360, 360)
         bindTarget: control
         bindTargetProperty: "angleVariation"
@@ -23,14 +23,14 @@ BaseSettings {
 
     InputRow {
         title: "Magnitude"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "magnitude"
     }
     InputRow {
         title: "Magnitude variation"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "magnitudeVariation"

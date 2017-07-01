@@ -38,7 +38,7 @@ BaseSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Width"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "bgWidth"
@@ -46,7 +46,7 @@ BaseSettings {
         }
         InputRow {
             title: "Height"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "bgHeight"

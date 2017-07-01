@@ -12,14 +12,14 @@ BaseEmitterSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Emit width"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "emitWidth"
         }
         InputRow {
             title: "Emit height"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 1000)
             bindTarget: control
             bindTargetProperty: "emitHeight"
@@ -107,7 +107,7 @@ BaseEmitterSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Emit rate per particle"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(1, 300)
             bindTarget: control
             bindTargetProperty: "emitRatePerParticle"

@@ -30,14 +30,14 @@ BaseVisualControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Emit rate"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 300)
             bindTarget: control
             bindTargetProperty: "emitRate"
         }
         InputRow {
             title: "Maximum emitted"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-1, 1000)
             bindTarget: control
             bindTargetProperty: "maximumEmitted"
@@ -47,7 +47,7 @@ BaseVisualControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Start time"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 10000)
             bindTarget: control
             bindTargetProperty: "startTime"
@@ -57,14 +57,14 @@ BaseVisualControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Life span"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
             bindTargetProperty: "lifeSpan"
         }
         InputRow {
             title: "Life span variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
             bindTargetProperty: "lifeSpanVariation"
@@ -74,21 +74,21 @@ BaseVisualControlSettings {
     BaseSettingsFrame {
         InputRow {
             title: "Size"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "size"
         }
         InputRow {
             title: "Size variation"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "sizeVariation"
         }
         InputRow {
             title: "End size"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-1, 1000)
             bindTarget: control
             bindTargetProperty: "endSize"
@@ -166,7 +166,7 @@ BaseVisualControlSettings {
 
         InputRow {
             title: "Velocity from movement"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "velocityFromMovement"

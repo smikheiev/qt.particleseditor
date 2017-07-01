@@ -7,12 +7,13 @@ import "inputControls"
 RowLayout {
     id: inputRow
 
-    readonly property int inputControlTypeSlider: 1
-    readonly property int inputControlTypeTextField: 2
-    readonly property int inputControlTypeCheckBox: 3
-    readonly property int inputControlTypeComboBox: 4
-    readonly property int inputControlTypeImageSelector: 5
-    readonly property int inputControlTypeColorSelector: 6
+    readonly property int inputControlTypeCheckBox: 1
+    readonly property int inputControlTypeColorSelector: 2
+    readonly property int inputControlTypeComboBox: 3
+    readonly property int inputControlTypeImageSelector: 4
+    readonly property int inputControlTypeSlider: 5
+    readonly property int inputControlTypeSliderWithTextField: 6
+    readonly property int inputControlTypeTextField: 7
 
     readonly property Item inputControl: inputControlLoader.item
 
@@ -75,18 +76,20 @@ RowLayout {
 
         sourceComponent: {
             switch (inputControlType) {
-                case inputControlTypeSlider:
-                    return sliderComponent
-                case inputControlTypeTextField:
-                    return textFieldComponent
                 case inputControlTypeCheckBox:
                     return checkBoxComponent
+                case inputControlTypeColorSelector:
+                    return colorSelectorComponent
                 case inputControlTypeComboBox:
                     return comboBoxComponent
                 case inputControlTypeImageSelector:
                     return imageSelectorComponent
-                case inputControlTypeColorSelector:
-                    return colorSelectorComponent
+                case inputControlTypeSlider:
+                    return sliderComponent
+                case inputControlTypeSliderWithTextField:
+                    return sliderWithTextFiledComponent;
+                case inputControlTypeTextField:
+                    return textFieldComponent
             }
             return null
         }
@@ -104,12 +107,13 @@ RowLayout {
         }
     }
 
-    Component { id: sliderComponent; Slider {} }
-    Component { id: textFieldComponent; TextField {} }
     Component { id: checkBoxComponent; CheckBox {} }
+    Component { id: colorSelectorComponent; ColorSelector {} }
     Component { id: comboBoxComponent; ComboBox {} }
     Component { id: imageSelectorComponent; ImageSelector {} }
-    Component { id: colorSelectorComponent; ColorSelector {} }
+    Component { id: sliderComponent; Slider {} }
+    Component { id: sliderWithTextFiledComponent; SliderWithTextFiled {} }
+    Component { id: textFieldComponent; TextField {} }
 
     function getSliderProperties(from, to, stepSize, valueTextPrecision) {
         if (!stepSize) {

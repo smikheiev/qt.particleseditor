@@ -15,7 +15,7 @@ BaseAffectorSettings {
         }
         InputRow {
             title: "Strength"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "strength"

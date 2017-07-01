@@ -8,14 +8,14 @@ BaseSettings {
 
     InputRow {
         title: "X"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "x"
     }
     InputRow {
         title: "X variation"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "xVariation"
@@ -23,14 +23,14 @@ BaseSettings {
 
     InputRow {
         title: "Y"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "y"
     }
     InputRow {
         title: "Y variation"
-        inputControlType: inputControlTypeSlider
+        inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
         bindTargetProperty: "yVariation"

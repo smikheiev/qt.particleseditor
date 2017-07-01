@@ -40,7 +40,7 @@ BaseAffectorSettings {
 
         InputRow {
             title: "Pace"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 1000)
             bindTarget: control
             bindTargetProperty: "pace"
@@ -48,14 +48,14 @@ BaseAffectorSettings {
 
         InputRow {
             title: "X variance"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-1000, 1000)
             bindTarget: control
             bindTargetProperty: "xVariance"
         }
         InputRow {
             title: "Y variance"
-            inputControlType: inputControlTypeSlider
+            inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(-1000, 1000)
             bindTarget: control
             bindTargetProperty: "yVariance"
