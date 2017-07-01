@@ -6,6 +6,10 @@ import ".."
 Slider {
     id: slider
 
+    property int valueTextPrecision: 2
+
+    snapMode: Slider.SnapAlways
+
     Text {
         id: fromText
 
@@ -16,7 +20,7 @@ Slider {
         }
 
         font.pointSize: 7
-        text: slider.from.toFixed(0)
+        text: slider.from.toFixed(valueTextPrecision)
     }
 
     Text {
@@ -27,7 +31,7 @@ Slider {
         }
 
         font.pointSize: 8
-        text: slider.value.toFixed(2)
+        text: slider.value.toFixed(valueTextPrecision)
     }
 
     Text {
@@ -40,7 +44,7 @@ Slider {
         }
 
         font.pointSize: 7
-        text: slider.to.toFixed(2)
+        text: slider.to.toFixed(valueTextPrecision)
     }
 
     Binding {

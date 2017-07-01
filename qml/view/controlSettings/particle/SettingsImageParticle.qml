@@ -44,7 +44,7 @@ BaseControlSettings {
         InputRow {
             title: "Color variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "colorVariation"
         }
@@ -54,14 +54,14 @@ BaseControlSettings {
         InputRow {
             title: "Alpha"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "alpha"
         }
         InputRow {
             title: "Alpha variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "alphaVariation"
         }
@@ -71,21 +71,21 @@ BaseControlSettings {
         InputRow {
             title: "Red variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "redVariation"
         }
         InputRow {
             title: "Green variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "greenVariation"
         }
         InputRow {
             title: "Blue variation"
             inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 1)
+            inputControlProperties: getSliderProperties(0, 1, 0.01, 2)
             bindTarget: control
             bindTargetProperty: "blueVariation"
         }

@@ -111,7 +111,13 @@ RowLayout {
     Component { id: imageSelectorComponent; ImageSelector {} }
     Component { id: colorSelectorComponent; ColorSelector {} }
 
-    function getSliderProperties(from, to) {
-        return { "from": from, "to": to }
+    function getSliderProperties(from, to, stepSize, valueTextPrecision) {
+        if (!stepSize) {
+            stepSize = 1
+        }
+        if (!valueTextPrecision) {
+            valueTextPrecision = 0
+        }
+        return { "from": from, "to": to, "stepSize": stepSize, "valueTextPrecision": valueTextPrecision }
     }
 }
