@@ -9,7 +9,7 @@ MouseArea {
 
     onClicked: {
         colorDialog.open();
-        colorDialog.currentColor = colorSelector.color;
+        colorDialog.color = colorSelector.color;
     }
 
     Rectangle {
@@ -44,7 +44,15 @@ MouseArea {
         title: "Choose a color"
 
         onAccepted: {
-            colorSelector.color = currentColor
+            colorSelector.color = colorDialog.color
+        }
+
+        onRejected: {
+            colorSelector.color = colorDialog.color
+        }
+
+        onCurrentColorChanged: {
+            colorSelector.color = colorDialog.currentColor
         }
     }
 
