@@ -29,23 +29,6 @@ BaseEmitterSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: pulseDurationInputRow
-            title: "Pulse duration"
-            inputControlType: inputControlTypeSlider
-            inputControlProperties: getSliderProperties(0, 10000)
-        }
-        Button {
-            width: parent.width
-            text: "Pulse"
-            onClicked: {
-                var duration = pulseDurationInputRow.inputControl.value;
-                control.pulse(duration);
-            }
-        }
-    }
-
-    BaseSettingsFrame {
-        InputRow {
             id: shapeSettingsRow
 
             title: "Shape"
