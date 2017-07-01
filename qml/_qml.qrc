@@ -16,6 +16,7 @@
         <file>controls/helpers/GroupsHelper.qml</file>
         <file>controls/helpers/SerializeHelper.qml</file>
         <file>controls/helpers/SubControlHelper.qml</file>
+        <file>controls/helpers/VariationHelper.qml</file>
         <file>controls/particle/ImageParticle.qml</file>
         <file>controls/shape/EllipseShape.qml</file>
         <file>controls/shape/LineShape.qml</file>

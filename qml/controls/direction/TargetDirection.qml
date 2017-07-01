@@ -10,6 +10,9 @@ TargetDirection {
     property string uniqueId: ""
     property string controlType: ControlType.targetDirection
 
+    property real magnitudeMin: 0
+    property real magnitudeMax: 0
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: targetDirection
         props: [
@@ -21,4 +24,13 @@ TargetDirection {
             "targetY",
         ]
     }
+
+    readonly property VariationHelper magnitudeVariationHelper: VariationHelper {
+        control: targetDirection
+        minValueProperty: "magnitudeMin"
+        maxValueProperty: "magnitudeMax"
+    }
+
+    magnitude: magnitudeVariationHelper.baseValue()
+    magnitudeVariation: magnitudeVariationHelper.variationValue()
 }

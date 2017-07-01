@@ -7,18 +7,18 @@ BaseSettings {
     id: settingsTargetDirection
 
     InputRow {
-        title: "Magnitude"
+        title: "Magnitude min"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "magnitude"
+        bindTargetProperty: "magnitudeMin"
     }
     InputRow {
-        title: "Magnitude variation"
+        title: "Magnitude max"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "magnitudeVariation"
+        bindTargetProperty: "magnitudeMax"
     }
 
     InputRow {

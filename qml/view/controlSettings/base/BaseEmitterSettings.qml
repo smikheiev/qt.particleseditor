@@ -56,18 +56,18 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
-            title: "Life span"
+            title: "Life span min"
             inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
-            bindTargetProperty: "lifeSpan"
+            bindTargetProperty: "lifeSpanMin"
         }
         InputRow {
-            title: "Life span variation"
+            title: "Life span max"
             inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 5000)
             bindTarget: control
-            bindTargetProperty: "lifeSpanVariation"
+            bindTargetProperty: "lifeSpanMax"
         }
     }
 

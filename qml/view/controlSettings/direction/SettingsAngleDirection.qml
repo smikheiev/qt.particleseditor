@@ -7,32 +7,32 @@ BaseSettings {
     id: settingsAngleDirection
 
     InputRow {
-        title: "Angle"
+        title: "Angle min"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-360, 360)
         bindTarget: control
-        bindTargetProperty: "angle"
+        bindTargetProperty: "angleMin"
     }
     InputRow {
-        title: "Angle variation"
+        title: "Angle max"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-360, 360)
         bindTarget: control
-        bindTargetProperty: "angleVariation"
+        bindTargetProperty: "angleMax"
     }
 
     InputRow {
-        title: "Magnitude"
+        title: "Magnitude min"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "magnitude"
+        bindTargetProperty: "magnitudeMin"
     }
     InputRow {
-        title: "Magnitude variation"
+        title: "Magnitude max"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "magnitudeVariation"
+        bindTargetProperty: "magnitudeMax"
     }
 }

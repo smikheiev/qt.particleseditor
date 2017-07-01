@@ -10,6 +10,12 @@ PointDirection {
     property string uniqueId: ""
     property string controlType: ControlType.pointDirection
 
+    property real xMin: 0
+    property real xMax: 0
+
+    property real yMin: 0
+    property real yMax: 0
+
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: pointDirection
         props: [
@@ -19,4 +25,22 @@ PointDirection {
             "yVariation"
         ]
     }
+
+    readonly property VariationHelper xVariationHelper: VariationHelper {
+        control: pointDirection
+        minValueProperty: "xMin"
+        maxValueProperty: "xMax"
+    }
+
+    readonly property VariationHelper yVariationHelper: VariationHelper {
+        control: pointDirection
+        minValueProperty: "yMin"
+        maxValueProperty: "yMax"
+    }
+
+    x: xVariationHelper.baseValue()
+    xVariation: xVariationHelper.variationValue()
+
+    y: yVariationHelper.baseValue()
+    yVariation: yVariationHelper.variationValue()
 }

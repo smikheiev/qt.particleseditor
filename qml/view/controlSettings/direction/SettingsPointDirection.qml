@@ -7,32 +7,32 @@ BaseSettings {
     id: settingsPointDirection
 
     InputRow {
-        title: "X"
+        title: "X min"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "x"
+        bindTargetProperty: "xMin"
     }
     InputRow {
-        title: "X variation"
+        title: "X max"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "xVariation"
+        bindTargetProperty: "xMax"
     }
 
     InputRow {
-        title: "Y"
+        title: "Y min"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "y"
+        bindTargetProperty: "yMin"
     }
     InputRow {
-        title: "Y variation"
+        title: "Y max"
         inputControlType: inputControlTypeSliderWithTextField
         inputControlProperties: getSliderProperties(-1000, 1000)
         bindTarget: control
-        bindTargetProperty: "yVariation"
+        bindTargetProperty: "yMax"
     }
 }

@@ -10,6 +10,9 @@ Emitter {
     property string uniqueId: ""
     property string controlType: ControlType.emitter
 
+    property int lifeSpanMin: 1000
+    property int lifeSpanMax: 0
+
     readonly property SubControlHelper shapeHelper: SubControlHelper {
         control: emitter
         propertyName: "shape"
@@ -38,8 +41,17 @@ Emitter {
         ]
     }
 
+    readonly property VariationHelper lifespanVariationHelper: VariationHelper {
+        control: emitter
+        minValueProperty: "lifeSpanMin"
+        maxValueProperty: "lifeSpanMax"
+    }
+
     width: 100
     height: 100
+
+    lifeSpan: lifespanVariationHelper.baseValue()
+    lifeSpanVariation: lifespanVariationHelper.variationValue()
 
     FrameHelper {
         control: emitter
