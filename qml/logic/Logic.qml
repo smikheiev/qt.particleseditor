@@ -120,17 +120,26 @@ QtObjectWithKids {
             }
             Actions.doControlSelected(controlToSelect);
 
-            // TODO: maybe it would be needed to filter node.kids in such way,
-            // that image particles would have been destroyed at the end
-            // (because of the possible crash)
             var controlsToDestroy = getControlsToDestroy(selectedControl);
 
             tree.remove(selectedControl);
-
             Actions.doModelUpdated(tree._root.kids);
 
             for (var i in controlsToDestroy) {
-                controlsToDestroy[i].destroy();
+                var control = controlsToDestroy[i];
+
+                // HACK: this is needed to avoid crash when removing Particle control
+                if (ControlType.isParticle(control.controlType)) {
+                    var particleSystem = control.system;
+                    if (particleSystem.running) {
+                        delay(100, function() {
+                            particleSystem.running = true;
+                        });
+                        particleSystem.running = false;
+                    }
+                }
+
+                control.destroy();
             }
         }
 
@@ -177,6 +186,17 @@ QtObjectWithKids {
             for (var i in tree._root.kids) {
                 tree._root.kids[i].data.restart();
             }
+        }
+
+        function delay(delayTime, callback) {
+            var timer = Qt.createQmlObject("import QtQuick 2.9; Timer {}", logic);
+            timer.interval = delayTime;
+            timer.repeat = false;
+            timer.triggered.connect(function() {
+                callback();
+                timer.destroy();
+            });
+            timer.start();
         }
     }
 
