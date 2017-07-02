@@ -97,10 +97,21 @@ BaseEmitterSettings {
 
     BaseSettingsFrame {
         InputRow {
+            id: followSettingsRow
+
             title: "Follow"
             inputControlType: inputControlTypeTextField
             bindTarget: control
             bindTargetProperty: "follow"
+
+            Connections {
+                target: control
+                onFollowChanged: {
+                    if (followSettingsRow.inputControl.text !== control.follow) {
+                        followSettingsRow.inputControl.text = control.follow;
+                    }
+                }
+            }
         }
     }
 

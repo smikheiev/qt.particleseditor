@@ -20,10 +20,21 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
+            id: groupSettingsRow
+
             title: "Group"
             inputControlType: inputControlTypeTextField
             bindTarget: control
             bindTargetProperty: "group"
+
+            Connections {
+                target: control
+                onGroupChanged: {
+                    if (groupSettingsRow.inputControl.text !== control.group) {
+                        groupSettingsRow.inputControl.text = control.group;
+                    }
+                }
+            }
         }
     }
 

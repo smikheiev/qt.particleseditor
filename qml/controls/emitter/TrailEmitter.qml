@@ -1,6 +1,8 @@
 import QtQuick.Particles 2.0
+import QtQuick 2.9
 
 import PE.ControlType 1.0
+import PE.Actions 1.0
 
 import "../helpers"
 
@@ -34,7 +36,7 @@ TrailEmitter {
         props: [
             {
                 "prop": "follow",
-                "serializeToQmlFunc": function() { return "\"" + group + "\""; }
+                "serializeToQmlFunc": function() { return "\"" + follow + "\""; }
             },
             "emitRatePerParticle",
             {
@@ -59,9 +61,38 @@ TrailEmitter {
         parent: trailEmitter
     }
 
+    QtObject {
+        id: priv
+
+        readonly property string prevFollow: trailEmitter.follow
+        readonly property string prevGroup: trailEmitter.group
+    }
+
     width: 100
     height: 100
 
     lifeSpan: lifespanVariationHelper.baseValue()
     lifeSpanVariation: lifespanVariationHelper.variationValue()
+
+    onGroupChanged: {
+        if (group.length > 0 && group === follow) {
+            // HACK: to avoid crash when group and follow are the same
+            // TODO: maybe to show error
+            group = priv.prevGroup;
+        } else {
+            // HACK: to avoid crash when changing group at runtime
+            Actions.doRerunParticleSystemWithDelay(trailEmitter, 100);
+        }
+    }
+
+    onFollowChanged: {
+        if (follow.length > 0 && follow === group) {
+            // HACK: to avoid crash when group and follow are the same
+            // TODO: maybe to show error
+            follow = priv.prevFollow;
+        } else {
+            // HACK: to avoid crash when both group and follow are empty strings
+            Actions.doRerunParticleSystemWithDelay(trailEmitter, 100);
+        }
+    }
 }

@@ -132,9 +132,7 @@ QtObjectWithKids {
                 if (ControlType.isParticle(control.controlType)) {
                     var particleSystem = control.system;
                     if (particleSystem.running) {
-                        delay(100, function() {
-                            particleSystem.running = true;
-                        });
+                        runParticleSystemWithDelay(particleSystem, 100)
                         particleSystem.running = false;
                     }
                 }
@@ -188,6 +186,33 @@ QtObjectWithKids {
             }
         }
 
+        function rerunParticleSystem(control, delayTime) {
+            var particleSystem = null;
+            if (ControlType.isParticleSystem(control.controlType)) {
+                particleSystem = control;
+            } else {
+                particleSystem = tree.getAnyParent(control, function(c) {
+                    return ControlType.isParticleSystem(c.controlType);
+                });
+            }
+            if (!particleSystem) {
+                console.error("Impossible to get particle system for control: " + control);
+            }
+
+            runParticleSystemWithDelay(particleSystem, delayTime);
+            particleSystem.running = false;
+        }
+
+        function runParticleSystemWithDelay(particleSystem, delayTime) {
+            if (delayTime > 0) {
+                delay(delayTime, function() {
+                    particleSystem.running = true;
+                });
+            } else {
+                particleSystem.running = true;
+            }
+        }
+
         function delay(delayTime, callback) {
             var timer = Qt.createQmlObject("import QtQuick 2.9; Timer {}", logic);
             timer.interval = delayTime;
@@ -226,6 +251,9 @@ QtObjectWithKids {
                     break;
                 case Actions.deserializationDone:
                     priv.restartAllParticleSystems();
+                    break;
+                case Actions.rerunParticleSystem:
+                    priv.rerunParticleSystem(message.control, message.delayTime);
                     break;
             }
         }

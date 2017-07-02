@@ -84,4 +84,9 @@ QtObject {
     function doDeserializationDone() {
         AppDispatcher.dispatch(deserializationDone);
     }
+
+    readonly property string rerunParticleSystem: "rerunParticleSystem"
+    function doRerunParticleSystemWithDelay(control, delayTime) {
+        AppDispatcher.dispatch(rerunParticleSystem, { control: control, delayTime: delayTime })
+    }
 }
