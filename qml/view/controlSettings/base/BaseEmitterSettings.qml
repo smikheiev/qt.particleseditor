@@ -20,26 +20,6 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: groupSettingsRow
-
-            title: "Group"
-            inputControlType: inputControlTypeTextField
-            bindTarget: control
-            bindTargetProperty: "group"
-
-            Connections {
-                target: control
-                onGroupChanged: {
-                    if (groupSettingsRow.inputControl.text !== control.group) {
-                        groupSettingsRow.inputControl.text = control.group;
-                    }
-                }
-            }
-        }
-    }
-
-    BaseSettingsFrame {
-        InputRow {
             title: "Emit rate"
             inputControlType: inputControlTypeSliderWithTextField
             inputControlProperties: getSliderProperties(0, 300)
@@ -108,8 +88,6 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: velocitySettingsRow
-
             title: "Velocity"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
@@ -118,61 +96,38 @@ BaseVisualControlSettings {
                     { "text": "Angle direction", "value": ControlType.angleDirection },
                     { "text": "Point direction", "value": ControlType.pointDirection },
                     { "text": "Target direction", "value": ControlType.targetDirection },
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control ? control.velocityHelper : null
-                onValueTypeChanged: {
-                    velocitySettingsRow.setVelocityTypeComboBox();
-                }
-            }
-
-            function onActivatedHandler() {
-                if (inputControl.value !== control.velocityHelper.valueType) {
-                    control.velocityHelper.setValueOfType(inputControl.value);
-                }
-            }
-
-            function setVelocityTypeComboBox() {
-                if (control.velocityHelper.hasDefaultValue) {
-                    inputControl.currentIndex = 0;
-                } else {
-                    inputControl.setCurrentIndex(control.velocityHelper.valueType);
-                }
-            }
-
-            Component.onCompleted: {
-                setVelocityTypeComboBox();
-            }
+            bindTarget: control ? control.velocityHelper : null
+            bindTargetProperty: "valueType"
+            bindTargetPropertyWrite: "newValueType"
         }
         SettingsAngleDirection {
-            property bool isItemVelocityAngle: settingsEmitter.control && settingsEmitter.control.velocityHelper.valueType === ControlType.angleDirection
+            property bool isItemVelocityAngle: baseEmitterSettings.control && baseEmitterSettings.control.velocityHelper.valueType === ControlType.angleDirection
 
             x: 10
             width: parent.width - x
 
             visible: isItemVelocityAngle
-            control: isItemVelocityAngle ? settingsEmitter.control.velocity : null
+            control: isItemVelocityAngle ? baseEmitterSettings.control.velocity : null
         }
         SettingsPointDirection {
-            property bool isItemVelocityPoint: settingsEmitter.control && settingsEmitter.control.velocityHelper.valueType === ControlType.pointDirection
+            property bool isItemVelocityPoint: baseEmitterSettings.control && baseEmitterSettings.control.velocityHelper.valueType === ControlType.pointDirection
 
             x: 10
             width: parent.width - x
 
             visible: isItemVelocityPoint
-            control: isItemVelocityPoint ? settingsEmitter.control.velocity : null
+            control: isItemVelocityPoint ? baseEmitterSettings.control.velocity : null
         }
         SettingsTargetDirection {
-            property bool isItemVelocityTarget: settingsEmitter.control && settingsEmitter.control.velocityHelper.valueType === ControlType.targetDirection
+            property bool isItemVelocityTarget: baseEmitterSettings.control && baseEmitterSettings.control.velocityHelper.valueType === ControlType.targetDirection
 
             x: 10
             width: parent.width - x
 
             visible: isItemVelocityTarget
-            control: isItemVelocityTarget ? settingsEmitter.control.velocity : null
+            control: isItemVelocityTarget ? baseEmitterSettings.control.velocity : null
         }
 
         InputRow {
@@ -186,8 +141,6 @@ BaseVisualControlSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: accelerationSettingsRow
-
             title: "Acceleration"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
@@ -196,61 +149,38 @@ BaseVisualControlSettings {
                     { "text": "Angle direction", "value": ControlType.angleDirection },
                     { "text": "Point direction", "value": ControlType.pointDirection },
                     { "text": "Target direction", "value": ControlType.targetDirection },
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control ? control.accelerationHelper : null
-                onValueTypeChanged: {
-                    accelerationSettingsRow.setAccelerationTypeComboBox();
-                }
-            }
-
-            function onActivatedHandler() {
-                if (inputControl.value !== control.accelerationHelper.valueType) {
-                    control.accelerationHelper.setValueOfType(inputControl.value);
-                }
-            }
-
-            function setAccelerationTypeComboBox() {
-                if (control.accelerationHelper.hasDefaultValue) {
-                    inputControl.currentIndex = 0;
-                } else {
-                    inputControl.setCurrentIndex(control.accelerationHelper.valueType);
-                }
-            }
-
-            Component.onCompleted: {
-                setAccelerationTypeComboBox();
-            }
+            bindTarget: control ? control.accelerationHelper : null
+            bindTargetProperty: "valueType"
+            bindTargetPropertyWrite: "newValueType"
         }
         SettingsAngleDirection {
-            property bool isAccelerationAngle: settingsEmitter.control && settingsEmitter.control.accelerationHelper.valueType === ControlType.angleDirection
+            property bool isAccelerationAngle: baseEmitterSettings.control && baseEmitterSettings.control.accelerationHelper.valueType === ControlType.angleDirection
 
             x: 10
             width: parent.width - x
 
             visible: isAccelerationAngle
-            control: isAccelerationAngle ? settingsEmitter.control.acceleration : null
+            control: isAccelerationAngle ? baseEmitterSettings.control.acceleration : null
         }
         SettingsPointDirection {
-            property bool isAccelerationPoint: settingsEmitter.control && settingsEmitter.control.accelerationHelper.valueType === ControlType.pointDirection
+            property bool isAccelerationPoint: baseEmitterSettings.control && baseEmitterSettings.control.accelerationHelper.valueType === ControlType.pointDirection
 
             x: 10
             width: parent.width - x
 
             visible: isAccelerationPoint
-            control: isAccelerationPoint ? settingsEmitter.control.acceleration : null
+            control: isAccelerationPoint ? baseEmitterSettings.control.acceleration : null
         }
         SettingsTargetDirection {
-            property bool isAccelerationTarget: settingsEmitter.control && settingsEmitter.control.accelerationHelper.valueType === ControlType.targetDirection
+            property bool isAccelerationTarget: baseEmitterSettings.control && baseEmitterSettings.control.accelerationHelper.valueType === ControlType.targetDirection
 
             x: 10
             width: parent.width - x
 
             visible: isAccelerationTarget
-            control: isAccelerationTarget ? settingsEmitter.control.acceleration : null
+            control: isAccelerationTarget ? baseEmitterSettings.control.acceleration : null
         }
     }
 }

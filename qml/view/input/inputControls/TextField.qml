@@ -1,8 +1,17 @@
 import QtQuick.Controls 2.2
 import QtQuick 2.9
 
+import "helpers"
+
 TextField {
     id: textField
+
+    readonly property BindingHelper bindingHelper: BindingHelper {
+        enableInputChangesTargetBinding: textField.autoBindTextChanges
+    }
+    readonly property string valueProperty: "text"
+
+    property bool autoBindTextChanges: true
 
     property var onEditingFinishedHandler: function() {}
     onEditingFinished: onEditingFinishedHandler()
@@ -37,19 +46,6 @@ TextField {
             from: 0.5
             to: 0.0
         }
-    }
-
-    Binding {
-        id: binding
-
-        value: textField.text
-    }
-
-    function bind(target, targetProperty) {
-        textField.text = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
     }
 
     function animateError() {

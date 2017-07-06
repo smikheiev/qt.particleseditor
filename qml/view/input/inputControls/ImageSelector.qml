@@ -2,8 +2,13 @@ import QtQuick.Controls 2.2
 import Qt.labs.platform 1.0
 import QtQuick 2.9
 
+import "helpers"
+
 MouseArea {
     id: imageSelector
+
+    readonly property BindingHelper bindingHelper: BindingHelper {}
+    readonly property string valueProperty: "file"
 
     property string file: ""
     property string folder: ""
@@ -88,18 +93,5 @@ MouseArea {
             imageSelector.file = fileDialog.file;
             imageSelector.folder = fileDialog.folder;
         }
-    }
-
-    Binding {
-        id: binding
-
-        value: imageSelector.file
-    }
-
-    function bind(target, targetProperty) {
-        imageSelector.file = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
     }
 }

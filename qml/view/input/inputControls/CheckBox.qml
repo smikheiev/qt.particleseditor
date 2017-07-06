@@ -1,19 +1,11 @@
 import QtQuick.Controls 2.2
 import QtQuick 2.9
 
+import "helpers"
+
 CheckBox {
     id: checkBox
 
-    Binding {
-        id: binding
-
-        value: checkBox.checked
-    }
-
-    function bind(target, targetProperty) {
-        checkBox.checked = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
-    }
+    readonly property BindingHelper bindingHelper: BindingHelper {}
+    readonly property string valueProperty: "checked"
 }

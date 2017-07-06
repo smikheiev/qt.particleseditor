@@ -29,45 +29,28 @@ BaseEmitterSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: shapeSettingsRow
+            title: "Group"
+            inputControlType: inputControlTypeTextField
+            bindTarget: control
+            bindTargetProperty: "group"
+        }
+    }
 
+    BaseSettingsFrame {
+        InputRow {
             title: "Shape"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
-                "model": [ "None", ControlType.ellipseShape, ControlType.lineShape, ControlType.maskShape],
                 "model": [
                     { "text": "None", "value": "" },
                     { "text": "Ellipse shape", "value": ControlType.ellipseShape },
                     { "text": "Line shape", "value": ControlType.lineShape },
                     { "text": "Mask shape", "value": ControlType.maskShape },
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control ? control.shapeHelper : null
-                onValueTypeChanged: {
-                    shapeSettingsRow.setShapeTypeComboBox();
-                }
-            }
-
-            function onActivatedHandler() {
-                if (inputControl.value !== control.shapeHelper.valueType) {
-                    control.shapeHelper.setValueOfType(inputControl.value);
-                }
-            }
-
-            function setShapeTypeComboBox() {
-                if (control.shapeHelper.hasDefaultValue) {
-                    inputControl.currentIndex = 0;
-                } else {
-                    inputControl.setCurrentIndex(control.shapeHelper.valueType);
-                }
-            }
-
-            Component.onCompleted: {
-                setShapeTypeComboBox();
-            }
+            bindTarget: control ? control.shapeHelper : null
+            bindTargetProperty: "valueType"
+            bindTargetPropertyWrite: "newValueType"
         }
         SettingsEllipseShape {
             property bool isShapeEllipse: settingsEmitter.control && settingsEmitter.control.shapeHelper.valueType === ControlType.ellipseShape

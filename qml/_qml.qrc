@@ -71,6 +71,7 @@
         <file>view/input/inputControls/Slider.qml</file>
         <file>view/input/inputControls/SliderWithTextFiled.qml</file>
         <file>view/input/inputControls/TextField.qml</file>
+        <file>view/input/inputControls/helpers/BindingHelper.qml</file>
         <file>view/input/InputRow.qml</file>
         <file>view/mainMenu/MainMenu.qml</file>
         <file>view/mainMenu/MainMenuWrapper.qml</file>

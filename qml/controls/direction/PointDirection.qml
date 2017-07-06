@@ -19,10 +19,38 @@ PointDirection {
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: pointDirection
         props: [
-            "x",
-            "xVariation",
-            "y",
-            "yVariation"
+            {
+                "prop": "x",
+                "ignore": "json"
+            },
+            {
+                "prop": "xVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "y",
+                "ignore": "json"
+            },
+            {
+                "prop": "yVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "xMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "xMax",
+                "ignore": "qml"
+            },
+            {
+                "prop": "yMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "yMax",
+                "ignore": "qml"
+            },
         ]
     }
 

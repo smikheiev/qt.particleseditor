@@ -19,10 +19,38 @@ AngleDirection {
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: angleDirection
         props: [
-            "angle",
-            "angleVariation",
-            "magnitude",
-            "magnitudeVariation"
+            {
+                "prop": "angle",
+                "ignore": "json"
+            },
+            {
+                "prop": "angleVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "magnitude",
+                "ignore": "json"
+            },
+            {
+                "prop": "magnitudeVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "angleMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "angleMax",
+                "ignore": "qml"
+            },
+            {
+                "prop": "magnitudeMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "magnitudeMax",
+                "ignore": "qml"
+            },
         ]
     }
 

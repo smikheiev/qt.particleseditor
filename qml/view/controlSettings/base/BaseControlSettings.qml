@@ -28,17 +28,11 @@ BaseSettings {
             inputControlType: inputControlTypeTextField
             inputControlProperties: {
                 "validator": uniqueIdValidator,
-                "onEditingFinishedHandler": onEditingFinishedHandler
+                "onEditingFinishedHandler": onEditingFinishedHandler,
+                "autoBindTextChanges": false
             }
-
-            Connections {
-                target: control
-                onUniqueIdChanged: {
-                    if (control.uniqueId !== uniqueIdSettingRow.inputControl.text) {
-                        setUniqueIdText()
-                    }
-                }
-            }
+            bindTarget: control
+            bindTargetProperty: "uniqueId"
 
             Connections {
                 target: AppDispatcher
@@ -46,7 +40,7 @@ BaseSettings {
                     if (type === Actions.changeControlIdError) {
                         if (control === message.control) {
                             uniqueIdSettingRow.inputControl.animateError()
-                            uniqueIdSettingRow.setUniqueIdText()
+                            uniqueIdSettingRow.inputControl.text = control.uniqueId;
                         }
                     }
                 }
@@ -56,14 +50,6 @@ BaseSettings {
                 if (control.uniqueId !== inputControl.text) {
                     Actions.doChangeControlId(control, inputControl.text)
                 }
-            }
-
-            function setUniqueIdText() {
-                uniqueIdSettingRow.inputControl.text = control.uniqueId;
-            }
-
-            Component.onCompleted: {
-                setUniqueIdText()
             }
         }
     }

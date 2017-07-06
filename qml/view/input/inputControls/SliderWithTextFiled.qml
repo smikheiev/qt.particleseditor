@@ -1,8 +1,13 @@
 import QtQuick.Layouts 1.3
 import QtQuick 2.9
 
+import "helpers"
+
 Item {
     id: sliderWithTextField
+
+    readonly property BindingHelper bindingHelper: BindingHelper {}
+    readonly property string valueProperty: "value"
 
     property alias from: slider.from
     property alias to: slider.to
@@ -48,18 +53,5 @@ Item {
                 textField.text = sliderWithTextField.value.toFixed(valueTextPrecision);
             }
         }
-    }
-
-    Binding {
-        id: binding
-
-        value: slider.value
-    }
-
-    function bind(target, targetProperty) {
-        sliderWithTextField.value = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
     }
 }

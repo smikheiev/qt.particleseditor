@@ -134,8 +134,6 @@ BaseControlSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: entryEffectSettingsRow
-
             title: "Entry effect"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
@@ -143,24 +141,10 @@ BaseControlSettings {
                     { "text": "None", "value": ImageParticle.None },
                     { "text": "Fade", "value": ImageParticle.Fade },
                     { "text": "Scale", "value": ImageParticle.Scale },
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control
-                onEntryEffectChanged: {
-                    entryEffectSettingsRow.inputControl.setCurrentIndex(control.entryEffect);
-                }
-            }
-
-            function onActivatedHandler() {
-                control.entryEffect = inputControl.value;
-            }
-
-            Component.onCompleted: {
-                inputControl.setCurrentIndex(control.entryEffect);
-            }
+            bindTarget: control
+            bindTargetProperty: "entryEffect"
         }
     }
 }

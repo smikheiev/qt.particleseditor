@@ -61,8 +61,22 @@ QtObjectWithKids {
                 "prop": "group",
                 "serializeToQmlFunc": function() { return "\"" + control.group + "\""; }
             },
-            "lifeSpan",
-            "lifeSpanVariation",
+            {
+                "prop": "lifeSpan",
+                "ignore": "json"
+            },
+            {
+                "prop": "lifeSpanVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "lifeSpanMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "lifeSpanMax",
+                "ignore": "qml"
+            },
             "maximumEmitted",
             "size",
             "sizeVariation",

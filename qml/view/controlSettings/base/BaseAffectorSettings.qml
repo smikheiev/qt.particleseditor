@@ -42,8 +42,6 @@ BaseVisualControlSettings {
     }
     BaseSettingsFrame {
         InputRow {
-            id: shapeSettingsRow
-
             title: "Shape"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
@@ -53,34 +51,11 @@ BaseVisualControlSettings {
                     { "text": "Ellipse shape", "value": ControlType.ellipseShape },
                     { "text": "Line shape", "value": ControlType.lineShape },
                     { "text": "Mask shape", "value": ControlType.maskShape },
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control ? control.shapeHelper : null
-                onValueTypeChanged: {
-                    shapeSettingsRow.setShapeTypeComboBox();
-                }
-            }
-
-            function onActivatedHandler() {
-                if (inputControl.value !== control.shapeHelper.valueType) {
-                    control.shapeHelper.setValueOfType(inputControl.value);
-                }
-            }
-
-            function setShapeTypeComboBox() {
-                if (control.shapeHelper.hasDefaultValue) {
-                    inputControl.currentIndex = 0;
-                } else {
-                    inputControl.setCurrentIndex(control.shapeHelper.valueType);
-                }
-            }
-
-            Component.onCompleted: {
-                setShapeTypeComboBox();
-            }
+            bindTarget: control ? control.shapeHelper : null
+            bindTargetProperty: "valueType"
+            bindTargetPropertyWrite: "newValueType"
         }
         SettingsEllipseShape {
             property bool isShapeEllipse: baseAffectorSettings.control && baseAffectorSettings.control.shapeHelper.valueType === ControlType.ellipseShape

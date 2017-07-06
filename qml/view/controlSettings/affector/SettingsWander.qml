@@ -9,8 +9,6 @@ BaseAffectorSettings {
 
     BaseSettingsFrame {
         InputRow {
-            id: affectedParameterSettingsRow
-
             title: "Affected parameter"
             inputControlType: inputControlTypeComboBox
             inputControlProperties: {
@@ -18,24 +16,10 @@ BaseAffectorSettings {
                     { "text": "Position", "value": Wander.Position },
                     { "text": "Velocity", "value": Wander.Velocity },
                     { "text": "Acceleration",  "value": Wander.Acceleration }
-                ],
-                "onActivatedHandler": onActivatedHandler
+                ]
             }
-
-            Connections {
-                target: control
-                onAffectedParameterChanged: {
-                    affectedParameterSettingsRow.inputControl.setCurrentIndex(control.affectedParameter);
-                }
-            }
-
-            function onActivatedHandler() {
-                control.affectedParameter = inputControl.value;
-            }
-
-            Component.onCompleted: {
-                affectedParameterSettingsRow.inputControl.setCurrentIndex(control.affectedParameter);
-            }
+            bindTarget: control
+            bindTargetProperty: "affectedParameter"
         }
 
         InputRow {

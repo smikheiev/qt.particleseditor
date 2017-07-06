@@ -2,8 +2,13 @@ import QtQuick.Controls 2.2
 import Qt.labs.platform 1.0
 import QtQuick 2.9
 
+import "helpers"
+
 MouseArea {
     id: colorSelector
+
+    readonly property BindingHelper bindingHelper: BindingHelper {}
+    readonly property string valueProperty: "color"
 
     property color color: "#000000"
 
@@ -54,18 +59,5 @@ MouseArea {
         onCurrentColorChanged: {
             colorSelector.color = colorDialog.currentColor
         }
-    }
-
-    Binding {
-        id: binding
-
-        value: colorSelector.color
-    }
-
-    function bind(target, targetProperty) {
-        colorSelector.color = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
     }
 }

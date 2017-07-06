@@ -16,8 +16,22 @@ TargetDirection {
     readonly property SerializeHelper serializeHelper: SerializeHelper {
         control: targetDirection
         props: [
-            "magnitude",
-            "magnitudeVariation",
+            {
+                "prop": "magnitude",
+                "ignore": "json"
+            },
+            {
+                "prop": "magnitudeVariation",
+                "ignore": "json"
+            },
+            {
+                "prop": "magnitudeMin",
+                "ignore": "qml"
+            },
+            {
+                "prop": "magnitudeMax",
+                "ignore": "qml"
+            },
             "proportionalMagnitude",
             "targetVariation",
             "targetX",

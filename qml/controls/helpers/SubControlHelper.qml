@@ -14,6 +14,13 @@ QtObjectWithKids {
     property string propertyName
     property var compareValueTypeFunction: function(valueType) { return false; }
 
+    property var newValueType
+    onNewValueTypeChanged: {
+        if (valueType !== newValueType) {
+            setValueOfType(newValueType)
+        }
+    }
+
     QtObject {
         id: priv
 

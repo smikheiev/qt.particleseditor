@@ -1,10 +1,13 @@
 import QtQuick.Controls 2.2
 import QtQuick 2.9
 
-import ".."
+import "helpers"
 
 Slider {
     id: slider
+
+    readonly property BindingHelper bindingHelper: BindingHelper {}
+    readonly property string valueProperty: "value"
 
     property int valueTextPrecision: 2
 
@@ -45,18 +48,5 @@ Slider {
 
         font.pointSize: 7
         text: slider.to.toFixed(valueTextPrecision)
-    }
-
-    Binding {
-        id: binding
-
-        value: slider.value
-    }
-
-    function bind(target, targetProperty) {
-        slider.value = target[targetProperty];
-
-        binding.property = targetProperty;
-        binding.target = target;
     }
 }

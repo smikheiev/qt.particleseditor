@@ -24,13 +24,16 @@ RowLayout {
 
     property QtObject bindTarget: null
     property string bindTargetProperty: ""
+    property string bindTargetPropertyWrite: ""
 
     QtObject {
         id: priv
 
         function tryToBind() {
             if (bindTarget && inputControl) {
-                inputControl.bind(bindTarget, bindTargetProperty)
+                inputControl.bindingHelper.bind(
+                    inputControl, inputControl.valueProperty, inputControl.valuePropertyWrite,
+                    bindTarget, bindTargetProperty, bindTargetPropertyWrite);
             }
         }
     }
